@@ -6,10 +6,8 @@ create table type_users
 );
 
 alter table type_users
-    owner to shnhslmciamlyg;
+    owner to bqqiwhxdlkihkz;
 
-INSERT INTO public.type_users (tu_id, tu_name) VALUES (1, 'Super');
-INSERT INTO public.type_users (tu_id, tu_name) VALUES (2, 'Nivel 1');
-INSERT INTO public.type_users (tu_id, tu_name) VALUES (3, 'Nivel 2');
-INSERT INTO public.type_users (tu_id, tu_name) VALUES (4, 'Nivel 3');
-INSERT INTO public.type_users (tu_id, tu_name) VALUES (5, 'Nivel 4');
+INSERT INTO public.type_users (tu_id, tu_name) VALUES (1, 'Admin');
+INSERT INTO public.type_users (tu_id, tu_name) VALUES (2, 'User');
+INSERT INTO public.type_users (tu_id, tu_name) VALUES (3, 'Manager');

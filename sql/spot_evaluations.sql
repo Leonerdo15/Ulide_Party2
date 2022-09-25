@@ -7,56 +7,18 @@ create table spot_evaluations
     se_us_id   integer not null
         references users,
     se_sp_id   integer not null
-        references spots
+        references spots,
+    se_date    timestamp with time zone default CURRENT_TIMESTAMP
 );
 
 alter table spot_evaluations
-    owner to shnhslmciamlyg;
+    owner to bqqiwhxdlkihkz;
 
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (1, 5, 'Fantastic', 2, 12);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (2, 4, 'Mui bueno', 2, 13);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (3, 1, 'Not for me', 2, 14);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (4, 5, 'Im a tea pot', 2, 15);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (5, 4, null, 2, 8);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (6, 5, null, 3, 1);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (7, 4, null, 3, 2);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (8, 2, null, 3, 5);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (9, 3, null, 3, 11);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (10, 4, null, 3, 16);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (11, 5, null, 4, 5);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (12, 4, null, 4, 2);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (13, 3, null, 5, 8);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (14, 4, null, 5, 16);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (15, 5, null, 5, 6);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (16, 5, null, 6, 1);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (17, 5, null, 6, 2);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (18, 1, null, 6, 3);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (19, 4, null, 6, 4);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (20, 5, null, 6, 6);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (21, 4, null, 6, 12);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (22, 4, null, 6, 13);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (23, 4, null, 6, 15);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (24, 1, null, 7, 1);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (25, 5, null, 7, 2);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (26, 4, null, 7, 3);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (27, 3, null, 7, 4);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (28, 5, null, 7, 6);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (29, 5, null, 7, 12);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (30, 5, null, 7, 13);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (31, 4, null, 7, 15);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (32, 4, null, 8, 1);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (33, 1, null, 8, 2);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (34, 5, null, 8, 3);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (35, 3, null, 8, 4);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (36, 2, null, 9, 1);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (37, 3, null, 9, 2);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (38, 4, null, 9, 3);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (39, 4, null, 9, 4);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (40, 3, null, 10, 1);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (41, 2, null, 10, 2);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (42, 2, null, 10, 3);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (43, 4, null, 10, 4);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (44, 5, null, 11, 1);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (45, 2, null, 11, 2);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (46, 1, null, 11, 3);
-INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id) VALUES (47, 3, null, 11, 4);
+INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id, se_date) VALUES (1, 3, 'meio meee', 2, 3, '2022-05-07 14:29:04.342048 +00:00');
+INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id, se_date) VALUES (2, 4, 'muito boa a comida', 4, 4, '2022-05-07 14:29:04.342048 +00:00');
+INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id, se_date) VALUES (20, 4, 'Teste01', 1, 2, '2022-05-31 17:35:36.126823 +00:00');
+INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id, se_date) VALUES (23, 5, 'so pq sim', 2, 2, '2022-06-06 17:04:43.127683 +00:00');
+INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id, se_date) VALUES (24, 4, 'Muito brilhante', 4, 3, '2022-06-07 13:26:04.128517 +00:00');
+INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id, se_date) VALUES (25, 5, 'muito bom', 3, 4, '2022-06-07 21:03:21.038567 +00:00');
+INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id, se_date) VALUES (26, 4, 'batataaaaaaaaaaaaaaaaaaaaaaaaa', 2, 4, '2022-06-08 08:30:02.730963 +00:00');
+INSERT INTO public.spot_evaluations (se_id, se_rate, se_comment, se_us_id, se_sp_id, se_date) VALUES (27, 2, 'nao sei o que escrever', 2, 4, '2022-06-08 12:40:22.178973 +00:00');

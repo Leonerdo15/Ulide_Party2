@@ -6,7 +6,6 @@ create table tag_types
 );
 
 alter table tag_types
-    owner to shnhslmciamlyg;
+    owner to bqqiwhxdlkihkz;
 
-INSERT INTO public.tag_types (tt_id, tt_name) VALUES (1, 'User');
-INSERT INTO public.tag_types (tt_id, tt_name) VALUES (2, 'System');
+INSERT INTO public.tag_types (tt_id, tt_name) VALUES (1, 'system');
