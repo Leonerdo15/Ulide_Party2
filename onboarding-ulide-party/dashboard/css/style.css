@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+/* ---------------------- COLORS CODE ---------------------- */
+
+:root {
+    --MediumBlue: #1E26BF;
+    --HotPink: #FF6DAF;
+    --HoneyYellow: #FFB500;
+    --RussianViolet: #2C064B;
+    --MidnightBlue: #181168;
+    --VioletCrayola: #963A7D;
+
+    --BGOnix: #404040;
+    --BGGrayWeb: #808080;
+    --BGSilver: #C0C0C0;
+}
+
+/* Gerais */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Chat */
+
+.demo {
+    list-style: none;
+    padding: 10px 20px;
+    width: auto;
+    background-color: var(--BGSilver);
+    margin-top: 5px;
+    border-radius: 0.5em;
+}
+
+.boxmsgUser {
+    display: flex;
+    justify-content: end;
+}
+
+.boxmsgGuest {
+    display: flex;
+    justify-content: start;
+}
+
+.demo#user {
+    text-align: end;
+    color: var(--RussianViolet);
+    margin-right: 40px;
+}
+
+.demo#guest {
+    margin-left: 40px;
+    color: var(--MediumBlue);
+}
+
+#chatbox input {
+    color: var(--BGSilver);
+    background-color: var(--BGOnix);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--BGSilver);
+    background-color: var(--BGOnix);
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+#btnSubmitMsg i {
+    color: var(--HoneyYellow);
+}
+
+/* ----- Typography ----- */
+
+body {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    background-color: var(--BGOnix);
+    color: var(--RussianViolet);
+}
+
+.shadow2 {
+    /* Shadow 6dp elevation */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button {
+    border-radius: 15px;
+    color: #1E26BF;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.minHeight {
+    min-height: 200px;
+}
+
+/* Access Area */
+body .access {
+    background-color: var(--BGOnix);
+}
+
+.access .card {
+    max-width: 500px;
+    margin: auto;
+    border-radius: 1rem;
+    background-color: var(--BGGrayWeb);
+}
+
+.logo-header {
+    padding: 15px;
+}
+
+.b-style {
+    border-radius: 0.5rem;
+    padding: 5px 15px;
+    border: 2px solid var(--RussianViolet);
+    background-color: var(--RussianViolet);
+    color: var(--BGSilver);
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#btnLogin {
+    border-radius: 1rem;
+    padding: 10px 30px;
+    border: 2px solid var(--RussianViolet);
+    background-color: var(--RussianViolet);
+    color: var(--BGSilver);
+    font-size: 26px;
+    font-weight: bold;
+    margin: 20px 0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+#btnLogin:hover {
+    background-color: var(--BGSilver);
+    color: var(--RussianViolet);
+    border: 2px solid var(--RussianViolet);
+}
+
+#btnSubmit {
+    border-radius: 1rem;
+    padding: 10px 30px;
+    border: 2px solid var(--RussianViolet);
+    background-color: var(--RussianViolet);
+    color: var(--BGSilver);
+    font-size: 26px;
+    font-weight: bold;
+    margin: 20px 0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+#btnSubmit:hover {
+    background-color: var(--BGSilver);
+    color: var(--RussianViolet);
+    border: 2px solid var(--RussianViolet);
+}
+
+
+.access h1 {
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.access h2 {
+    font-size: 50px;
+    text-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-form label {
+    margin: 0;
+    text-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    font-size: 30px;
+}
+
+.form-group i {
+    padding: 10px;
+    border-radius: 1rem 0 0 1rem;
+    color: var(--BGSilver);
+    background-color: var(--RussianViolet);
+}
+
+.form-group i::before {
+    position: relative;
+    top: 5px;
+}
+
+.form-group input {
+    vertical-align: baseline;
+    width: 89%;
+    margin-left: -6px;
+    padding: 7px 10px;
+    border: none;
+    color: var(--BGSilver);
+    background-color: var(--BGOnix);
+    border-radius: 0 1rem 1rem 0;
+}
+
+.login-link {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    padding: 30px 0;
+    border: 2px solid var(--BGGrayWeb);
+    border-radius: 1rem;
+    color: var(--BGSilver);
+}
+
+.login-link p {
+    margin: 0;
+    text-align: center;
+}
+
+.login-link a {
+    text-decoration: none;
+    color: var(--RussianViolet);
+}
+
+.login-link a:hover {
+    opacity: 0.6;
+    text-decoration: underline;
+}

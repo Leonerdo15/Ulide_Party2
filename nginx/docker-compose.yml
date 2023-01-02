@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  nginx:
+    image: nginx:1.23.2
+    network_mode: bridge
+    container_name: nginx
+    restart: always
+    ports:
+      - "1036:80"
+      -  "443:443"
+      -  "1037:1037"
+    volumes:
+       - ./:/etc/nginx/conf.d
+       - ./nginx.teste:/etc/nginx/nginx.conf
+#    command: bash -c "apt update -y && apt upgrade -y && apt install nano -y && apt install sudo -y"

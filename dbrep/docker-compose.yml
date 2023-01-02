@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  rep1:
+    image: postgres:15.0-bullseye
+    container_name: postgres_rep1_slot
+    network_mode: bridge
+    restart: always
+    ports:
+      - "1046:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./my-postgres.conf:/var/lib/postgresql/data/postgresql.conf
+      - ./my-pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
+      -  ~/sharedfolder:/var/lib/postgresql/data/sharedfolder:rw
+    environment:
+      - POSTGRES_PASSWORD=A+k&%P8dHIwVW$tzXSS5LHSpSHL$uUtZJyVK$ZB!
+      - POSTGRES_DB=my_default_database
+
+  rep2:
+    image: postgres:15.0-bullseye
+    container_name: postgres_rep2_slot
+    network_mode: bridge
+    restart: always
+    ports:
+      - "1047:5432"
+    volumes:
+      - ./data1:/var/lib/postgresql/data
+      - ./my-postgres.conf:/var/lib/postgresql/data/postgresql.conf
+      - ./my-pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
+    environment:
+      - POSTGRES_PASSWORD=A+k&%P8dHIwVW$tzXSS5LHSpSHL$uUtZJyVK$ZB!
+      - POSTGRES_DB=my_default_database
+

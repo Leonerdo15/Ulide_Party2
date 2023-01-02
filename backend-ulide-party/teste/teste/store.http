@@ -1,0 +1,17 @@
+POST http://localhost:3000/api/owners/newRequest
+Content-Type: application/json
+
+{
+  "ow_us_id": 1,
+  "ow_sp_id": 4,
+  "sr_text_request": "Im  the legit owner of this spot",
+  "ph_id": 1
+}
+
+###
+GET http://localhost:3000/api/owners/noValid
+Accept: application/json
+
+###
+
+

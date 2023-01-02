@@ -1,0 +1,591 @@
+@charset "UTF-8";
+
+/*---------------------- COLORS CODE ----------------------*/
+
+:root {
+    --MediumBlue: #1E26BF;
+    --HotPink: #FF6DAF;
+    --HoneyYellow: #FFB500;
+    --RussianViolet: #2C064B;
+    --MidnightBlue: #181168;
+    --VioletCrayola: #963A7D;
+
+    --BGOnix: #404040;
+    --BGGrayWeb: #808080;
+    --BGSilver: #C0C0C0;
+}
+
+/* Gerais */
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background: linear-gradient(#2c064b 40%, #FF6DAF 100%) no-repeat;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+
+.row {
+    margin: 0;
+}
+
+h1 {
+    color: var(--BGSilver);
+    font-size: 36px;
+}
+
+p, li {
+    color: #2C064B;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.padding {
+    margin: 70px 0;
+}
+
+.overlay img {
+    filter: brightness(40%);
+}
+
+.b-style {
+    color: var(--HoneyYellow);
+    font-size: 20px;
+    background: var(--RussianViolet);
+    border: 2px solid var(--RussianViolet);
+    border-radius: 0.5rem;
+    padding: 5px 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Barra de Navegação */
+header, .navbar {
+    background-color: #404040;
+    min-height: 91px;
+}
+
+#nav-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#main-logo {
+    position: absolute;
+    margin-top: -37.5px;
+    width: 75px;
+    transition: width 1s;
+}
+
+.navbar-brand {
+    padding: 0;
+    color: var(--BGSilver);
+}
+
+.navbar-brand:hover {
+    color: var(--BGSilver);
+}
+
+#navbar-links a {
+    color: var(--BGSilver);
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 1rem .8rem;
+}
+
+#dashboard-menu {
+    position: relative;
+    right: 50%;
+}
+
+#main-logo:hover {
+    position: absolute;
+    width: 95px;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+/* Home Page */
+.header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/lisboa.png") 0 25% no-repeat;
+    height: 600px;
+    background-size: cover;
+}
+
+.header#rest {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header img {
+    padding-top: 125px;
+}
+
+.bg-cover#rest {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/restaurante_banner.jpg") 0 25% no-repeat;
+    background-size: cover;
+}
+
+.slogan > h1 {
+    font-size: 60px;
+    color: var(--HoneyYellow);
+    font-family: 'Dancing Script', cursive;
+}
+
+#rest h1, h2 {
+    color: var(--HoneyYellow);
+}
+
+#rest h1 {
+    font-size: 5em;
+}
+
+.curve-divider.inverted {
+    background-image: radial-gradient(75% 100% at top, transparent calc(100% - 3px), var(--RussianViolet));
+    height: 25vw;
+    margin-top: -25vw;
+}
+
+.curve-divider {
+    height: 5vw;
+    min-height: 5vh;
+    overflow: hidden;
+}
+
+.cardtype {
+    max-height: 500px;
+    border: none;
+    background: transparent;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.cardtype > img {
+    max-height: 500px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.cardtype > div {
+    top: initial;
+}
+
+.cardtype h2 {
+    color: var(--BGSilver);
+    font-size: 36px;
+    vertical-align: bottom;
+}
+
+footer {
+    background-color: #404040;
+    height: 360px;
+    border-radius: 100px 100px 0 0;
+}
+
+footer img {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+footer h2 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--HoneyYellow);
+    font-size: 36px;
+}
+
+footer p {
+    color: var(--BGSilver);
+}
+
+.fi-br-envelope {
+    vertical-align: sub;
+    color: var(--HoneyYellow);
+}
+
+.footer-curve-divider {
+    height: 50px;
+    margin-top: 80px;
+}
+
+.footer-curve-divider > div {
+    background: radial-gradient(75% 100% at bottom, var(--BGOnix) calc(100% - 3px), transparent);
+}
+
+.footer-curve-divider > div, .curve-divider > div {
+    height: 375%;
+}
+
+/* Slider */
+.slider {
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+#mainSlider .carousel-inner, #mainSlider .carousel-item {
+    max-height: 500px;
+}
+
+#mainSlider .carousel-caption {
+    top: 35%;
+}
+
+#mainSlider img {
+    object-fit: cover;
+    object-position: center;
+}
+
+#mainSlider i, #ementasCarousel i {
+    color: var(--HoneyYellow);
+    font-size: 2.5em;
+}
+
+#mainSlider .carousel-caption h2 {
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+#mainSlider .carousel-caption p {
+    color: var(--BGSilver);
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 100px;
+}
+
+.carousel-indicators .active {
+    background-color: var(--HoneyYellow);
+}
+
+/* List Area */
+#list-area .card {
+    background-color: var(--BGSilver);
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 25px;
+}
+
+#list-area img {
+    max-height: 100%;
+    max-width: 100%;
+    height: 198px;
+    width: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+#list-area h3 {
+    color: var(--RussianViolet);
+    font-size: 36px;
+    margin: 0 0 30px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#list-area h3::after {
+    content: "";
+    border-top: 5px solid var(--HotPink);
+    border-radius: 15px;
+    width: 88%;
+    position: absolute;
+    top: 70px;
+    left: 6%;
+}
+
+#list-area .spot-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+#list-area h4 {
+    color: var(--RussianViolet);
+    margin: 20px 0 15px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#list-area p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#list-area i {
+    color: var(--HoneyYellow);
+    font-size: 18px;
+}
+
+#lista_spots a {
+    text-decoration: none;
+}
+
+/* Botão mostrar mais */
+#mostrar-mais {
+    padding: 80px 0 0 0;
+}
+
+#mostrar-mais button{
+    background-color: var(--RussianViolet);
+    color: var(--BGSilver);
+    border: 2px solid var(--RussianViolet);
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 35px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+#mostrar-mais button:hover{
+    background-color: transparent;
+    color: var(--RussianViolet);
+    border: 2px solid var(--RussianViolet);
+}
+
+/* Info Spots */
+#info-spots .nav-tabs .nav-link {
+    border: 2px solid transparent;
+}
+
+#info-spots .nav-tabs .nav-link.active {
+    color: var(--RussianViolet);
+    background-color: transparent;
+    border-color: transparent transparent var(--RussianViolet);
+}
+
+#info-spots .nav-tabs li {
+    font-size: 20px;
+}
+
+#info-spots .nav-tabs {
+    border-bottom: 1px solid var(--BGGrayWeb);
+}
+
+#info-spots .nav-item a {
+    color: var(--BGGrayWeb);
+}
+
+#info-spots .nav-item a:hover {
+    color: var(--BGSilver);
+}
+
+#info-buttons {
+    margin-bottom: 20px;
+}
+
+#info-spots .card {
+    background: var(--BGOnix);
+    border-radius: 1rem;
+}
+
+#info-spots button {
+    cursor: pointer;
+}
+
+#info-spots .b-style {
+    color: var(--HoneyYellow);
+    font-size: 20px;
+    background: var(--RussianViolet);
+    border: 2px solid var(--RussianViolet);
+    border-radius: 0.5rem;
+    padding: 5px 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+#info-spots .b-style i {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+#info-spots .b-style-off {
+    color: var(--BGSilver);
+    font-size: 20px;
+    background: transparent;
+    border: 2px solid var(--RussianViolet);
+    border-radius: 0.5rem;
+    padding: 5px 10px;
+}
+
+#info-spots .b-style-off i {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+#info-spots .b-style-off:hover {
+    color: var(--HoneyYellow);
+    background: var(--RussianViolet);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+#info-spots h2, h3, h4, h6, p {
+    color: var(--BGSilver);
+}
+
+#info-spots h4 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+#info-spots p {
+    font-size: 18px;
+}
+
+#info-spots h6 {
+    position: relative;
+    top: 20px;
+}
+
+#info-spots .col, .col-2, .col-3, .col-6, .col-7, .col-10 {
+    padding-left: 0;
+}
+
+#pills-eval .card {
+    background-color: var(--BGSilver);
+    margin-bottom: 5px;
+}
+
+#pills-eval img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+#pills-eval h5, #pills-eval p {
+    color: var(--BGOnix);
+}
+
+#pills-eval h5 {
+    font-size: 20px;
+    margin: 0;
+    padding: 5px;
+}
+
+#pills-eval p {
+    margin: 0;
+}
+
+#ementasCarousel img {
+    object-fit: cover;
+}
+
+#local-map {
+    border-radius: 50%;
+}
+
+/* Modal */
+#modal-eval .modal-content {
+    background-color: var(--BGOnix);
+    color: var(--BGSilver);
+}
+
+.modal-header {
+    background-color: var(--RussianViolet);
+    border: none;
+}
+
+.modal-footer {
+    border: none;
+}
+
+#modal-eval .close {
+    color: var(--BGSilver);
+}
+
+#modal-eval .b-style {
+    color: var(--BGSilver);
+    font-size: 20px;
+    background: var(--RussianViolet);
+    border: 2px solid var(--RussianViolet);
+    border-radius: 0.5rem;
+    padding: 5px 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+#limpar {
+    cursor: pointer;
+}
+
+/* Alerta de não logado */
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/* Star Widger */
+.star-widget input{
+    display: none;
+}
+
+.star-widget label {
+    font-size: 20px;
+    color: var(--BGSilver);
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label {
+    color: var(--HoneyYellow);
+}
+
+input:checked ~ label {
+    color: var(--HoneyYellow);
+}
+
+form .textarea{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: var(--BGSilver);
+    border: 1px solid var(--BGGrayWeb);
+    border-radius: 1rem;
+    background: var(--BGOnix);
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+}
+
+/*** Map ***/
+#floating-panel {
+    position: absolute;
+    top: 10px;
+    left: 40%;
+    z-index: 1;
+    background-color: #fff;
+    padding: 5px;
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+}

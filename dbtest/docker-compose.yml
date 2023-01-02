@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  master:
+    image: postgres:15.0-bullseye
+    container_name: postgres_master
+    network_mode: bridge
+    restart: always
+    ports:
+      - "1045:5432"
+    volumes:
+      - ./my-postgres.conf:/var/lib/postgresql/data/postgresql.conf
+      - ./my-pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
+    environment:
+      - POSTGRES_PASSWORD=A+k&%P8dHIwVW$tzXSS5LHSpSHL$uUtZJyVK$ZB!
+      - POSTGRES_DB=my_default_database

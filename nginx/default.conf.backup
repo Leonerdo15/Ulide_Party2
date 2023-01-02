@@ -1,0 +1,101 @@
+upstream frontend {
+	server ulideserver.ddns.net	weight=2;
+	server 192.168.1.163:81;
+}
+
+upstream backend {
+
+	server ulideserver.ddns.net		weight=2;
+	
+
+}
+
+
+
+
+server{
+listen 80;
+	
+	server_name ulideparty.ddns.net ;
+	
+	#location / {
+	#proxy_pass http://192.168.1.163:81;
+	#}	
+	return 301 https://$server_name$request_uri;
+
+}
+
+server{
+	#listen[::]:80;
+	#listen 80 http2;
+	listen 443 ssl http2;
+	server_name ulideparty.ddns.net;
+	server_tokens off;
+	ssl_certificate /etc/nginx/conf.d/ulideparty_ddns_net.pem;
+	ssl_certificate_key	/etc/nginx/conf.d/server-cert.key;
+	ssl on;
+	ssl_session_cache builtin:1000 shared:SSL:10m;
+	ssl_protocols TLSv1.3;
+	ssl_ciphers "HIGH !aNULL !eNULL !EXPORT !CAMELIA !DES !MD5 !PSK !RC4";
+	ssl_prefer_server_ciphers on;
+	
+	#acess_log /var/log_nginx/nginx-2443.log;
+	
+	location / {
+	proxy_set_header Host $host;
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header X-Forwarded-Proto $scheme;
+	proxy_pass http://frontend/;	
+	
+	}
+
+#	if ($scheme = http ){ 
+#	return 301 https://$server_name$request_uri ;
+#
+#}
+
+	if ($request_method !~ ^(GET|HEAD|POST)$ )
+	{
+	return 405;
+	}
+
+}
+
+server{
+        #listen[::]:80;
+        #listen 80 http2;
+        listen 3000 ssl http2;
+        server_name ulideparty.ddns.net;
+        server_tokens off;
+        ssl_certificate /etc/nginx/conf.d/ulideparty_ddns_net.pem;
+        ssl_certificate_key     /etc/nginx/conf.d/server-cert.key;
+        ssl on;
+        ssl_session_cache builtin:1000 shared:SSL:10m;
+        ssl_protocols TLSv1.3;
+        ssl_ciphers "HIGH !aNULL !eNULL !EXPORT !CAMELIA !DES !MD5 !PSK !RC4";
+        ssl_prefer_server_ciphers on;
+
+        #acess_log /var/log_nginx/nginx-2443.log;
+
+        location / {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+  
+      proxy_pass http://backend/;
+
+        }
+
+#       if ($scheme = http ){
+#       return 301 https://$server_name$request_uri ;
+#
+#}
+
+        if ($request_method !~ ^(GET|HEAD|POST)$ )
+        {
+        return 405;
+        }
+
+}
+
+

@@ -1,0 +1,43 @@
+stream {
+        upstream database {
+
+                server 192.168.1.163:5432;
+                server 192.168.1.163:1035;
+        }
+        server{
+        #listen[::]:80;
+        #listen 80 http2;
+        listen 1037 ssl http2;
+        server_name ulideparty.ddns.net;
+        server_tokens off;
+        ssl_certificate /etc/nginx/conf.d/ulideparty_ddns_net.pem;
+        ssl_certificate_key     /etc/nginx/conf.d/server-cert.key;
+        ssl on;
+        ssl_session_cache builtin:1000 shared:SSL:10m;
+        ssl_protocols TLSv1.3;
+        ssl_ciphers "HIGH !aNULL !eNULL !EXPORT !CAMELIA !DES !MD5 !PSK !RC4";
+        ssl_prefer_server_ciphers on;
+
+        #acess_log /var/log_nginx/nginx-2443.log;
+
+        location / {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        proxy_pass database;
+
+        }
+
+#       if ($scheme = http ){
+#       return 301 https://$server_name$request_uri ;
+#
+#}
+
+        if ($request_method !~ ^(GET|HEAD|POST)$ )
+        {
+        return 405;
+        }
+
+}
+}

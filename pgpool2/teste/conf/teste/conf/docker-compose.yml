@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  pgpool:
+    image: bitnami/pgpool:4.3.3
+    network_mode: bridge
+    container_name: pgpool1
+    restart: always
+    ports:
+      - "1043:5432"
+    volumes:
+        - ./:/etc/pgpool-II/.
+        - ./:/opt/bitnami/pgpool/conf/.
+        - ~/sharedfolder:/etc/pgpool-II/sharedfolder:rw

@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  pgpool:
+    image: bitnami/pgpool:4.3.3
+    network_mode: bridge
+    container_name: pgpool1
+    restart: always
+    ports:
+      - "1043:5432"
+    volumes:
+        - ./:/etc/pgpool-II/.
+        - ~/sharedfolder:/etc/pgpool-II/sharedfolder:rw
+    environment:
+     - PGPOOL_ADMIN_USERNAME=postgres
+     - PGPOOL_ADMIN_PASSWORD=qFKx3sgV%@CamZBkqryRwGzqV@yz(wH)WRRaW*+xr
+     - PGPOOL_SR_CHECK_USER=postgres
+     - PGPOOL_SR_CHECK_PASSWORD=qFKx3sgV%@CamZBkqryRwGzqV@yz(wH)WRRaW*+xr
+     - PGPOOL_HEALTH_CHECK_USER=postgres
+     - PGPOOL_HEALTH_CHECK_Password=qFKx3sgV%@CamZBkqryRwGzqV@yz(wH)WRRaW*+xr
+     - PGPOOL_POSTGRES_USERNAME=postgres
+     - PGPOOL_POSTGRES_PASSWORD=qFKx3sgV%@CamZBkqryRwGzqV@yz(wH)WRRaW*+xr
+     - PGPOOL_BACKEND_NODES=0:172.17.0.5:5432,1:172.17.0.2:5432,2:172.17.0.8:5432
+     - PGPOOL_ENABLE_TLS=yes
+     - PGPOOL_TLS_CERT_FILE=/etc/pgpool-II/server.crt
+     - PGPOOL_TLS_KEY_FILE=/etc/pgpool-II/server.key
+     - PGPOOL_TLS_CA_FILE=/etc/pgpool-II/ca.crt
+     - PGPOOL_ENABLE_LOAD_BALANCING=yes

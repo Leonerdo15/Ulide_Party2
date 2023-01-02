@@ -1,0 +1,118 @@
+version: "3.9"
+services:
+  nginx:
+    image: nginx:1.23.2
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      - "3000:3000"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./nginx/cert:/etc/nginx/ssl
+    depends_on:
+      - webserver1
+      - webserver2
+      - apiserver1
+      - apiserver2
+
+  webserver1:
+    image: php:8.1.12-apache
+    container_name: webserver1
+    restart: always
+    ports:
+      - "81:80"
+    working_dir: /var/www/html
+    volumes:
+      - ../onboarding-ulide-party:/var/www/html
+      - ./logserver1:/var/www/html/dashboard/logserver1
+      - ./logserver2:/var/www/html/dashboard/logserver2
+
+  webserver2:
+    image: php:8.1.12-apache
+    container_name: webserver2
+    restart: always
+    ports:
+      - "82:80"
+    working_dir: /var/www/html
+    volumes:
+      - ../onboarding-ulide-party:/var/www/html
+      - ./logserver1:/var/www/html/dashboard/logserver1
+      - ./logserver2:/var/www/html/dashboard/logserver2
+
+  apiserver1:
+    image: dockernode
+    container_name: apiserver1
+    restart: always
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./syslog-ng/syslog-ng:/etc/default/syslog-ng
+      - ./syslog-ng/syslog-ng-source.conf:/etc/syslog-ng/syslog-ng.conf
+      - ./syslog-ng/ssl:/etc/syslog-ng/ssl
+
+  apiserver2:
+    image: dockernode
+    container_name: apiserver2
+    restart: always
+    ports:
+      - "3002:3000"
+    volumes:
+      - ./syslog-ng/syslog-ng:/etc/default/syslog-ng
+      - ./syslog-ng/syslog-ng-source.conf:/etc/syslog-ng/syslog-ng.conf
+      - ./syslog-ng/ssl:/etc/syslog-ng/ssl
+
+  logserver1:
+    image: syslog-ng:1.1
+    container_name: logserver1
+    restart: always
+    ports:
+      - "511:514"
+      - "6511:6514"
+    volumes:
+      - ./logserver1:/home/logs
+      - ./syslog-ng/syslog-ng:/etc/default/syslog-ng
+      - ./syslog-ng/syslog-ng-destination.conf:/etc/syslog-ng/syslog-ng.conf
+      - ./syslog-ng/ssl:/etc/syslog-ng/ssl
+
+  logserver2:
+    image: syslog-ng:1.1
+    container_name: logserver2
+    restart: always
+    ports:
+      - "512:514"
+      - "6512:6514"
+    volumes:
+      - ./logserver2:/home/logs
+      - ./syslog-ng/syslog-ng:/etc/default/syslog-ng
+      - ./syslog-ng/syslog-ng-destination.conf:/etc/syslog-ng/syslog-ng.conf
+      - ./syslog-ng/ssl:/etc/syslog-ng/ssl
+
+  db-main:
+    image: postgres:15
+    container_name: db-main
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+        POSTGRES_PASSWORD: qFKx3sgV%@CamZBkqryRwGzqV@yz(wH)WRRaW*+xr
+    volumes:
+      - ./postgres/main/data:/var/lib/postgresql/data
+
+  db-replica:
+    image: postgres:15
+    container_name: db-replica
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+        POSTGRES_PASSWORD: qFKx3sgV%@CamZBkqryRwGzqV@yz(wH)WRRaW*+xr
+        PGDATA: /var/lib/postgresql/data
+    volumes:
+        - ./postgres/replica/data:/var/lib/postgresql/data
+
+networks:
+  default:
+    name: ulideserver.ddns.net
+    external: true
